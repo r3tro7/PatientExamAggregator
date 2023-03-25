@@ -70,6 +70,19 @@ class PatientExamSystem:
         if id in self.exams:
             self.exams[id].exams = [exam for exam in self.exams[id].exams if exam.id != id]
             self.exams.pop(id, None)
-    #-----Starting of del_exam() Method-----#
+    #-----Ending of del_exam() Method-----#
+
+    #-----Starting of get_patients_summary() Method-----#
+    def get_patients_summary(self) -> List[str]:
+        """
+        Function to generate a Patient Record Summary.
+        Returns:
+            summary(List): List containing all Records for a Patient
+        """
+        summary = []
+        for id, patient in self.patients.items():
+            summary.append(f"Name: {patient.name}, Id: {patient.id}, Exam Count: {len(patient.exams)}")
+        return summary
+    #-----Ending of get_patients_summary() Method-----#
 
 #---------------Ending of PatientExamSystem Class---------------#
