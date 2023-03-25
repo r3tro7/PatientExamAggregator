@@ -86,3 +86,39 @@ class PatientExamSystem:
     #-----Ending of get_patients_summary() Method-----#
 
 #---------------Ending of PatientExamSystem Class---------------#
+
+#---------------Starting of process_file() Method---------------#
+def process_file() -> None:
+    """
+    Function to Process the input.txt file and Generate a summary for all patients on the Systems.
+    The function also generates an output.txt file with the summary and also outputs the summary on the console.
+    """
+    system = PatientExamSystem()
+    input_file_path = input("Enter input file path: ")
+    if input_file_path == "":
+        input_file_path = "input.txt"
+    output_file_path = input("Enter output file path: ")
+    if output_file_path == "":
+        output_file_path = "output.txt"
+    with open(input_file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:
+        for line in input_file:
+            tokens = line.strip().split()
+            if tokens[0] == "ADD":
+                if tokens[1] == "PATIENT":
+                    system.add_patient(tokens[2], " ".join(tokens[3:]))
+                elif tokens[1] == "EXAM":
+                    system.add_exam(tokens[2], tokens[3])
+            elif tokens[0] == "DEL":
+                if tokens[1] == "PATIENT":
+                    system.del_patient(tokens[2])
+                elif tokens[1] == "EXAM":
+                    system.del_exam(tokens[2])
+
+        summary = system.get_patients_summary()
+        for patient in summary:
+            output_file.write(patient + '\n')
+            print(patient)
+#---------------Ending of process_file() Method---------------#
+
+if __name__ == '__main__':
+    process_file()
