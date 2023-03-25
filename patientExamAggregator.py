@@ -13,3 +13,14 @@ class Exam:
     def __init__(self, id: str):
         self.id = id
 #---------------Ending of Exam Class---------------#
+
+#---------------Starting of PatientExamSystem Class---------------#
+class PatientExamSystem:
+    """
+    Manages the Patient Record System
+    """
+    def __init__(self):
+        self.patients: Dict[str, Patient] = {}
+        self.exams: Dict[str, Patient] = {}
+
+#---------------Ending of PatientExamSystem Class---------------#
