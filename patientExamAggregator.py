@@ -47,7 +47,7 @@ class PatientExamSystem:
             self.exams[exam_id] = self.patients[patient_id]
     #-----Ending of add_exam() Method-----#
 
-    #-----Starting of del_exam() Method-----#
+    #-----Starting of del_patient() Method-----#
     def del_patient(self, id: str) -> None:
         """
         Function to delete patient Record from the system.
@@ -58,7 +58,7 @@ class PatientExamSystem:
             for exam in self.patients[id].exams:
                 self.exams.pop(exam.id, None)
             self.patients.pop(id, None)
-    #-----Ending of del_exam() Method-----#
+    #-----Ending of del_patient() Method-----#
 
     #-----Starting of del_exam() Method-----#
     def del_exam(self, id: str) -> None:
