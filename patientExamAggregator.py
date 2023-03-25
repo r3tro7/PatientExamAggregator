@@ -7,3 +7,9 @@ class Patient:
         self.name = name
         self.exams: List[Exam] = []
 #---------------Ending of Patient Class---------------#
+
+#---------------Starting of Exam Class---------------#
+class Exam:
+    def __init__(self, id: str):
+        self.id = id
+#---------------Ending of Exam Class---------------#
