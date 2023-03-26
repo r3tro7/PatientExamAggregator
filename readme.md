@@ -1,5 +1,5 @@
 # Patient Record System
-A simple service written in Python that reads in a text file containing patient and exam records, allows for adding or deleting records, and outputs a summary of patients in the system including their identifiers, names, and the number of exams they gone through.
+A simple service written in Python that reads in a text file containing patient and exam records, allows for adding or deleting records, and outputs a summary of patients in the system including their identifiers, names, and the number of exams they have gone through.
 
 # Technical Specifications
 - [Python 3](https://www.python.org/downloads/)
